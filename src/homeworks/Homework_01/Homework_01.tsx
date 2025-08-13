@@ -9,8 +9,14 @@
 import "./styles.css";
 import { useState } from "react";
 
+interface Car {
+  brand:string;
+  price:number;
+  isDiesel:boolean;
+}
+
 function Homework_06() {
-  const [cars] = useState([
+  const [cars,setCars] = useState<Car[]>([
     { brand: "BMW", price: 20000, isDiesel: true },
     { brand: "Mercedes", price: 22000, isDiesel: false },
     { brand: "Porshe", price: 50000, isDiesel: true },
@@ -21,11 +27,11 @@ function Homework_06() {
   return (
     <div className="cars_wrapper">
       <div className="cars_container">
-        {cars.map((car, index) => (
-          <div key={index} className="car_card">
+        {cars.map((car: Car, index: number) => (
+          <div  className="car_card" key={index}>
             <h3 className="brand">{car.brand}</h3>
             <p className="price">Price: {car.price} </p>
-            <p>isDiesel:{car.isDiesel}</p>
+            <p>isDiesel:{car.isDiesel ? "Yes" : "No"}</p>
           </div>
         ))}
       </div>
