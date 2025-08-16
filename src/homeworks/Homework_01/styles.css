@@ -1,24 +1,27 @@
-.cars_container {
+.homework_06_page_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 80px;
+  padding: 80px;
+  background-color: rgb(5, 5, 62);
+}
+
+.car_card {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-left: 20px;
+  width: 300px;
+  min-height: 150px;
+  max-height: fit-content;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 40px;
+  background-color: white;
 }
-.car_card {
-  border: 5px solid green;
-  padding: 10px;
-  width: 450px;
-  text-align: center;
-  background-color: blanchedalmond;
-}
-.cars_wrapper {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSWLCV5IP_iSOARCXBxwwx_-7o0-j01psQw&s);
-  flex: 1;
-}
-.price {
+
+.card_info {
+  color: black;
   font-size: 20px;
-}
-.brand {
   font-weight: bold;
-  font-size: 25px;
 }
