@@ -12,7 +12,7 @@ function App() {
       {/* Lessons */}
       {/* <Lesson_06 /> */}
       {/* <Homework_06 /> */}
-      <Lesson_07 />
+      {/* <Lesson_07 /> */}
 
 
 

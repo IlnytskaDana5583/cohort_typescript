@@ -3,6 +3,7 @@ import { WEATHER_CODES } from "./types";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import Counter from "../../components/Counter/Counter";
+
 import { useState } from "react";
 
 // !! Есть 2 основных способа вызова перерендера(обновления) компонента:
