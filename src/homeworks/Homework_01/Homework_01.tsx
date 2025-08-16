@@ -6,36 +6,38 @@
 // Используя map JSX элементов, расположите данные из обьектов в карточках и покажите эти карточки на странице.
 //  Стили на ваше усмотрение
 
-import "./styles.css";
-import { useState } from "react";
+import { type ReactNode } from "react";
+import { v4 } from "uuid";
 
-interface Car {
-  brand:string;
-  price:number;
-  isDiesel:boolean;
-}
+import { type Car } from "./types";
+import "./styles.css";
+
 
 function Homework_06() {
-  const [cars,setCars] = useState<Car[]>([
+  const cars: Car[] = [
     { brand: "BMW", price: 20000, isDiesel: true },
     { brand: "Mercedes", price: 22000, isDiesel: false },
     { brand: "Porshe", price: 50000, isDiesel: true },
     { brand: "Nissan", price: 25000, isDiesel: false },
     { brand: "Audi", price: 50000, isDiesel: true },
-  ]);
+  ];
 
-  return (
-    <div className="cars_wrapper">
-      <div className="cars_container">
-        {cars.map((car: Car, index: number) => (
-          <div  className="car_card" key={index}>
-            <h3 className="brand">{car.brand}</h3>
-            <p className="price">Price: {car.price} </p>
-            <p>isDiesel:{car.isDiesel ? "Yes" : "No"}</p>
-          </div>
-        ))}
+  const carCards: ReactNode = cars.map((car:Car) => {
+
+  
+
+ return (
+      <div key={v4()} className="car_card">
+        <p className="card_info">Brand: {car.brand}</p>
+        <p className="card_info">Price: {car.price}</p>
+        <p className="card_info">
+          Fuel Type: {car.isDiesel ? "Diesel" : "Petrol"}
+        </p>
       </div>
-    </div>
-  );
+    );
+  });
+
+  return <div className="homework_06_page_wrapper">{carCards}</div>;
 }
+
 export default Homework_06;
