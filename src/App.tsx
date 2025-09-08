@@ -6,6 +6,7 @@ import Home from "pages/EmployeeApp/Home/Home";
 import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
 import LogIn from "pages/EmployeeApp/LogIn/LogIn";
 import About from "pages/EmployeeApp/About/About";
+import Clients from "pages/Clients/Clients";
 
 // Components
 import Layout from "components/Layout/Layout";
@@ -31,6 +32,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/clients" element={<Clients />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<LogIn />} />
